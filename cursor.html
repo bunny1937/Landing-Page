@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hamburger Menu</title>
+    <style>
+      /* Base styles for navigation */
+      .nav-contacts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      /* Social links and contact links styles (no changes) */
+      .social-links {
+        /* ... */
+      }
+
+      .contact-links {
+        /* ... */
+      }
+
+      /* Hamburger menu styles */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 3px 0;
+        transition: 0.4s;
+      }
+
+      /* Navigation links styles (no changes) */
+      .nav-links {
+        /* ... */
+      }
+
+      /* Media query for responsiveness */
+      @media screen and (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          background-color: rgb(139, 40, 40);
+          position: absolute;
+          top: 50px;
+          left: 0;
+          transition: 0.5s;
+        }
+        .nav-links.active {
+          display: flex;
+        }
+        .nav-links li {
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav-contacts">
+        <div class="menu-toggle" id="menuToggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul class="social-links">
+          <!-- Your social links here -->
+        </ul>
+        <ul class="contact-links">
+          <!-- Your contact links here -->
+        </ul>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
